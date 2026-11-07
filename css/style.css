@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Inter', system-ui, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #0f172a, #1e293b, #3b0764);
+    color: #f8fafc;
+    min-height: 200vh; /*set extraa height for scrolling*/
+}
+
+/*MAKINGG THE GLASS NAVBAR*/
+.glass-navbar{
+    position: sticky;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+/*Inner stylling for the glass navbar*/
+background: rgba(255,255,255,0.08);
+background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  
+  /* Border & Glow */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  
+  transition: all 0.3s ease;
+}
+
+/* Layout Alignment */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+/* Content placeholder spacing */
+.content section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
