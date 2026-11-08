@@ -3,12 +3,14 @@
 
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
-  }
-
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  if (!canvas) {
 
   if (navToggle && navLinks) {
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2, active: false };
     navToggle.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', String(isOpen));

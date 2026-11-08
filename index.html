@@ -6,6 +6,7 @@
     <title>Nefeli Fernando | Portfolio</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 
 <body>
@@ -15,7 +16,10 @@
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <a class="contact-button" href="mailto:nefelifernando706@gmail.com" aria-label="Email Nefeli Fernando">
                 <span class="contact-button__icon" aria-hidden="true">
@@ -31,7 +35,7 @@
     <main>
         <section class="hero" id="hero">
             <div class="hero-content">
-                <h1>Hello, I'm <span>Nefeli Fernando</span></h1>
+                <h1>Hello, I'm <span><span class="name-gradient">Nefeli</span> Fernando</span></h1>
                 <h3>Student Developer &amp; Designer</h3>
                 <p>
                     I create website, explore new technologies, and turn creative ideas into digital expiriences.
@@ -65,8 +69,17 @@
     
 
     <section class="about" id="about">
-     <div class="about-img">
-            <img src="Assets\Images\180e7122-c09a-41a5-afe5-b1e38b32b5b2tttttttttttttttttttttttttt.png" alt="Nefeli Fernando">
+    <!-- ===== PHOTO CARD: copy from here ... ===== -->
+        <div class="photo-card" id="photo-card" aria-label="Photos of Nefeli">
+            <img src="Assets/Images/Smiling Portrait Before “Single Step” Backdrop.png" alt="Nefeli smiling in front of a backdrop" class="active">
+            <img src="Assets/Images/Spotlight Classroom Discussion.png" alt="Nefeli participating in a classroom discussion">
+            <img src="Assets/Images/WhatsApp Image 2026-11-09 at 12.50.31 AM.jpeg" alt="Nefeli at a school event">
+ 
+            <div class="dots" aria-hidden="true">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
 
         <!--ABOUT SECTION-->
@@ -206,10 +219,10 @@
                 <div class="input-group">
                     <div class="input-box">
                         <input type="text" placeholder="Full Name">
-                        <input type="email" placeholder="Email"
+                        <input type="email" placeholder="Email">
                     </div>
                     <div class="input-box">
-                        <input type="number" placeholder="Phone Number">
+                        <input type="tel" placeholder="Phone Number">
                         <input type="text" placeholder="Subject">
                     </div>
                 </div>
@@ -260,7 +273,7 @@
             © Nefeli Fernando | All Rights Reserved            
         </p>
 
-</body>
     <script src="js/app.js"></script>
     <script src="js/index.js"></script>
+</body>
 </html>
