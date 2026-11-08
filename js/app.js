@@ -1,3 +1,4 @@
+
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('.glass-navbar');
   if (window.scrollY > 20) {
@@ -8,3 +9,5 @@ window.addEventListener('scroll', () => {
     nav.style.boxShadow = '0 8px 32px 0 rgba(0, 0, 0, 0.2)';
   }
 });
+
+

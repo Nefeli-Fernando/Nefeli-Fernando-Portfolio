@@ -1,3 +1,5 @@
+            /*NAVIGATION BAR*/
+
 * {
   box-sizing: border-box;
 }
@@ -57,6 +59,11 @@ body {
   color: #7dd3fc;
 }
 
+
+
+
+
+            /*CV CARD STYLES*/
 .cv-card-wrap {
   display: flex;
   justify-content: center;
