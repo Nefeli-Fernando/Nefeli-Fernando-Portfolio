@@ -9,74 +9,79 @@
 </head>
 
 <body>
-
-    <!--HEADERR-->
     <nav class="glass-navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">Nefeli Fernando</a>
+            <a href="#hero" class="nav-logo">Nefeli Fernando</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">Contact</a></li>
-                
+                <li><a href="#skills">Skills</a></li>
             </ul>
+            <a class="contact-button" href="mailto:nefelifernando706@gmail.com" aria-label="Email Nefeli Fernando">
+                <span class="contact-button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" focusable="false">
+                        <path d="M12.175 9H0V7h12.175L6.575 1.4 8 0l8 8-8 8-1.425-1.4L12.175 9Z"></path>
+                    </svg>
+                </span>
+                <span class="contact-button__label">Contact</span>
+            </a>
         </div>
     </nav>
 
-    <!--CONTENT WRAPPER TO show the scroling functi-->
-   <!-- <main class="content">
-        <section id="home"><h1>Welcome</h1></section>
-        <section id="about"><h1>About Us</h1></section>
-    </main>
-        --->
-    <!--MAINNN CONTENT-->
     <main>
-        <!--HERO SECTION-->
         <section class="hero" id="hero">
             <div class="hero-content">
                 <h1>Hello, I'm <span>Nefeli Fernando</span></h1>
-                <h3>Student Developer & Designer</h3>
-
+                <h3>Student Developer &amp; Designer</h3>
                 <p>
                     I create website, explore new technologies, and turn creative ideas into digital expiriences.
                 </p>
-
-                <a href="projects.html" class="btn">Explore my projects
-                </a>
+                <a href="projects.html" class="btn">Explore my projects</a>
                 <div class="social-icons">
-                    <a href="#" aria-label="GitHub"><img src="Assets/Logos/github-6980894_640.webp" alt=""></a>
-                    <a href="#" aria-label="LinkedIn"><img src="Assets/Logos/images.png" alt=""></a>
-                    <a href="#" aria-label="Instagram"><img src="Assets/Logos/instagram-logo-vector-illustration_1300495-24.avif" alt=""></a>
-                    <a href="#" aria-label="Facebook"><img src="Assets/Logos/facebook-logo-vector-facebook-official-logo-vector-facebook-logo-illustrator_1002350-1803.avif" alt=""></a>
+                    <a href="https://github.com/Nefeli-Fernando" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><img src="Assets/Logos/github-6980894_640.webp" alt=""></a>
+                    <a href="https://www.linkedin.com/in/nefeli-fernando-09ab37289/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="Assets/Logos/images.png" alt=""></a>
+                    <a href="https://www-fallback.instagram.com/nef_the_explorer_19/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><img src="Assets/Logos/instagram-logo-vector-illustration_1300495-24.avif" alt=""></a>
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><img src="Assets/Logos/facebook-logo-vector-facebook-official-logo-vector-facebook-logo-illustrator_1002350-1803.avif" alt=""></a>
                 </div>
-
                 <div class="btn-group">
                     <a href="#" class="btn">Hire</a>
-                    <a href="#contact" class="btn">Contact</a>
+                    <a class="contact-button" href="mailto:nefelifernando706@gmail.com" aria-label="Email Nefeli Fernando">
+                        <span class="contact-button__icon" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" focusable="false">
+                                <path d="M12.175 9H0V7h12.175L6.575 1.4 8 0l8 8-8 8-1.425-1.4L12.175 9Z"></path>
+                            </svg>
+                        </span>
+                        <span class="contact-button__label">Contact</span>
+                    </a>
                 </div>
             </div>
-
             <div class="hero-img">
-                <img src="Assets\Images\180e7122-c09a-41a5-afe5-b1e38b32b5b2tttttttttttttttttttttttttt.png" alt="Nefeli Fernando">
+                <img src="Assets/Images/180e7122-c09a-41a5-afe5-b1e38b32b5b2tttttttttttttttttttttttttt.png" alt="Nefeli Fernando">
             </div>
         </section>
 
-        <!--ABOUT SECTION-->
-        <section class="about" id="about">
-            <h2>About Me</h2>
-            <p>
-                I'm an aspiring developer studying web design, and technology. I'm always learning and looking for new challenges.
-            </p>
-        </section>
-
-        <!--SKILLS SECTION-->
-        <section class="skills" id="skills">
-            <h2>My Skills</h2>
-        </section>
     </main>
 
-    <div class="cv-card-wrap">
+    
+
+    <section class="about" id="about">
+    <!-- <div class="about-img">
+            <img src="Assets\Images\180e7122-c09a-41a5-afe5-b1e38b32b5b2tttttttttttttttttttttttttt.png" alt="Nefeli Fernando">
+        </div>-->
+
+        <!--ABOUT SECTION-->
+
+        <div class="about-content">
+            <h2>About <span>Me</span></h2>
+            <p id="about-description">
+                I'm an aspiring Software Engineer with a passion for technology, problem-solving, and creative design. Currently pursuing my studies in software engineering, I'm developing my skills in programming, web development, database management, and software design. I also have an interest in graphic design, which allows me to combine technical knowledge with creativity to build engaging and user-friendly digital experiences. I'm always eager to learn new technologies, take on challenges, and grow as a developer while working towards my goal of creating innovative and meaningful solutions.
+            </p>
+            <button class="btn read-more" type="button" aria-expanded="false" aria-controls="about-description">Read More</button>
+            </div>
+    </section>
+
+
+        <div class="cv-card-wrap">
         <div class="cv-card">
             <div class="cv-card__content">
                 <span class="cv-card__initial">NF</span>
@@ -94,6 +99,7 @@
             <div class="cv-card__shape cv-card__shape--two"></div>
         </div>
     </div>
+
 
 
 </body>

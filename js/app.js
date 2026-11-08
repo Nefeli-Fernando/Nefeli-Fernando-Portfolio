@@ -10,4 +10,16 @@ window.addEventListener('scroll', () => {
   }
 });
 
+const readMoreButton = document.querySelector('.read-more');
+const aboutContent = document.querySelector('.about-content');
+
+if (readMoreButton && aboutContent) {
+  readMoreButton.addEventListener('click', () => {
+    const isExpanded = readMoreButton.getAttribute('aria-expanded') !== 'true';
+    aboutContent.classList.toggle('is-expanded', isExpanded);
+    readMoreButton.setAttribute('aria-expanded', String(isExpanded));
+    readMoreButton.textContent = isExpanded ? 'Read Less' : 'Read More';
+  });
+}
+
 
