@@ -191,3 +191,80 @@ body {
     transform: translateY(12px) scale(0.95);
   }
 }
+
+                /*SERVICES SECTION STYLESSS*/
+
+          .services {
+            width: min(1200px, calc(100% - 3rem));
+            margin: 0 auto;
+            color: #f8fafc;
+          }
+
+          .services .heading {
+            margin: 0 0 2.5rem;
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+          }
+
+          .services-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: stretch;
+            gap: 1.25rem;
+          }
+
+          .service-box {
+            min-width: 0;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+          }
+
+          .service-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--main-color);
+            background: rgba(255, 255, 255, 0.1);
+          }
+
+          .service-info {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+          }
+
+          .service-info i {
+            color: var(--main-color);
+            font-size: 2.25rem;
+          }
+
+          .service-info h4 {
+            font-size: 1.25rem;
+          }
+
+          .service-info p {
+            color: rgba(248, 250, 252, 0.78);
+            font-size: 0.96rem;
+            line-height: 1.7;
+          }
+
+          @media (max-width: 900px) {
+            .services-container {
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+          }
+
+          @media (max-width: 600px) {
+            .services {
+              width: calc(100% - 2rem);
+            }
+
+            .services-container {
+              grid-template-columns: 1fr;
+            }
+          }
+
