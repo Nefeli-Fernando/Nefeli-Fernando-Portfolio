@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
 
 :root {
   --main-color: #c4c7cc;
@@ -57,7 +58,7 @@ background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 1px;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: "Goldman", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
@@ -177,6 +178,60 @@ main {
     box-shadow: 0 0 25px var(--main-color),
                 0 0 50px var(--main-color),
                 0 0 100px var(--main-color);
+}
+
+.profile-flip {
+  width: min(100%, 420px);
+  aspect-ratio: 1;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.profile-flip__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.profile-flip.is-flipped .profile-flip__inner {
+  transform: rotateY(180deg);
+}
+
+.profile-flip__face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.profile-flip__back {
+  transform: rotateY(180deg);
+}
+
+.profile-flip__face img,
+.profile-flip__face video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.profile-flip:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-flip__inner {
+    transition: none;
+  }
 }
 
 .social-icons {
@@ -463,8 +518,8 @@ main {
             justify-content: center;
         }
 
-        .hero-img img {
-            width: min(75vw, 340px);
+        .profile-flip {
+          width: min(75vw, 340px);
         }
 
         /*ABOUT US SECTION STYLES*/

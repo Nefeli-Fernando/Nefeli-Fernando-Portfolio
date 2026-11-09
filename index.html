@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/marquee.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="icon" type="image/png" href="Assets\Logos\file.webp">
 </head>
 
 <body>
@@ -19,7 +20,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a class="contact-button" href="mailto:nefelifernando706@gmail.com" aria-label="Email Nefeli Fernando">
@@ -50,11 +50,11 @@
         <section class="hero" id="hero">
             <div class="hero-content">
                 <h1>Hello, I'm <span><span class="name-gradient">Nefeli</span> Fernando</span></h1>
-                <h3>Student Developer &amp; Designer</h3>
+                <h3>Full-Stack Developer</h3>
                 <p>
-                    I create website, explore new technologies, and turn creative ideas into digital expiriences.
+                    I create websites, explore new technologies, and turn creative ideas into digital expiriences.
                 </p>
-                <a href="projects.html" class="btn">Explore my projects</a>
+                <a href="#projects" class="btn">Explore my projects</a>
                 <div class="social-icons">
                     <a href="https://github.com/Nefeli-Fernando" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><img src="Assets/Logos/github-6980894_640.webp" alt=""></a>
                     <a href="https://www.linkedin.com/in/nefeli-fernando-09ab37289/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="Assets/Logos/images.png" alt=""></a>
@@ -74,7 +74,18 @@
                 </div>
             </div>
             <div class="hero-img">
-                <img src="Assets/Images/180e7122-c09a-41a5-afe5-b1e38b32b5b2tttttttttttttttttttttttttt.png" alt="Nefeli Fernando">
+                <div class="profile-flip" id="profile-flip" tabindex="0" role="group" aria-label="Profile photo. Hover for a video">
+                    <div class="profile-flip__inner">
+                        <div class="profile-flip__face profile-flip__front">
+                            <img src="Assets/Images/180e7122-c09a-41a5-afe5-b1e38b32b5b2tttttttttttttttttttttttttt.png" alt="Nefeli Fernando">
+                        </div>
+                        <div class="profile-flip__face profile-flip__back" aria-hidden="true">
+                            <video muted loop playsinline preload="metadata" tabindex="-1">
+                                <source src="Assets/Videos/PROFILE%20swap.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -217,11 +228,11 @@
         <div class="cv-card-wrap">
         <div class="cv-card">
             <div class="cv-card__content">
-                <span class="cv-card__initial">NF</span>
-                <p class="cv-card__role">Frontend Developer</p>
+                <span class="cv-card__initial">Nefeli Fernando CV</span>
+                <p class="cv-card__role">Full-Stack Developer</p>
             </div>
 
-            <a href="#" class="cv-download" download>
+            <a href="files/Nefeli%20CV%20updated%20(1).pdf" class="cv-download" download="Nefeli-Fernando-CV.pdf">
                 Download CV
                 <svg viewBox="0 0 100 100" aria-hidden="true">
                     <path d="M22.1,77.9a4,4,0,0,1,4-4H73.9a4,4,0,0,1,0,8H26.1A4,4,0,0,1,22.1,77.9ZM35.2,47.2a4,4,0,0,1,5.7,0L46,52.3V22.1a4,4,0,1,1,8,0V52.3l5.1-5.1a4,4,0,0,1,5.7,0,4,4,0,0,1,0,5.6l-12,12a3.9,3.9,0,0,1-5.6,0l-12-12A4,4,0,0,1,35.2,47.2Z"></path>
