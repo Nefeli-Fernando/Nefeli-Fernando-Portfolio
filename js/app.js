@@ -73,3 +73,81 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && photos.len
 }
 }
 
+//MAQRUEEEEEEE SCROLL
+function initMarquee(marquee) {
+    const group = marquee.querySelector(".marquee-group");
+    const baseSpeed = parseFloat(marquee.dataset.speed) || 60;          // pixels per second
+    const direction = marquee.dataset.direction === "right" ? -1 : 1;   // 1 = moves left, -1 = moves right
+    const originalItems = Array.from(group.children);
+ 
+    // put everything inside a moving "track"
+    const track = document.createElement("div");
+    track.className = "marquee-track";
+    marquee.appendChild(track);
+    track.appendChild(group);
+ 
+    let groupWidth = 0;
+ 
+    // Repeat the words until one group is wider than the screen, then add a clone, so there's never a gap
+    function fill() {
+        track.querySelectorAll(".marquee-group.clone").forEach(function (c) { c.remove(); });
+        group.innerHTML = "";
+        originalItems.forEach(function (item) { group.appendChild(item); });
+ 
+        const setWidth = group.getBoundingClientRect().width;
+        const repeats = Math.ceil(marquee.clientWidth / setWidth);
+        for (let i = 1; i < repeats; i++) {
+            originalItems.forEach(function (item) { group.appendChild(item.cloneNode(true)); });
+        }
+ 
+        groupWidth = group.getBoundingClientRect().width;
+ 
+        const clone = group.cloneNode(true);
+        clone.classList.add("clone");
+        clone.setAttribute("aria-hidden", "true");
+        track.appendChild(clone);
+    }
+ 
+    let position = 0;          // how far we've travelled
+    let speed = baseSpeed;     // current speed (changes smoothly)
+    let targetSpeed = baseSpeed;
+    let lastTime = performance.now();
+ 
+    // hover: ease down to 0. Leave: ease back up to normal.
+    marquee.addEventListener("mouseenter", function () { targetSpeed = 0; });
+    marquee.addEventListener("mouseleave", function () { targetSpeed = baseSpeed; });
+ 
+    function frame(now) {
+        const dt = Math.min((now - lastTime) / 1000, 0.1);   // seconds since last frame
+        lastTime = now;
+ 
+        // ease: close 6% of the gap to the target every 1/60 second
+        const ease = 1 - Math.pow(1 - 0.06, dt * 60);
+        speed += (targetSpeed - speed) * ease;
+ 
+        position += direction * speed * dt;
+ 
+        // wrap around so it loops forever
+        position = ((position % groupWidth) + groupWidth) % groupWidth;
+        track.style.transform = "translateX(" + -position + "px)";
+ 
+        requestAnimationFrame(frame);
+    }
+ 
+    // wait for the font so the widths are measured correctly
+    document.fonts.ready.then(function () {
+        fill();
+ 
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+ 
+        requestAnimationFrame(function (now) {
+            lastTime = now;
+            frame(now);
+        });
+    });
+ 
+    window.addEventListener("resize", fill);
+}
+ 
+document.querySelectorAll(".marquee").forEach(initMarquee);
+

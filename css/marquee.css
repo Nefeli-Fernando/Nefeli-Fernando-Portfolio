@@ -1,0 +1,74 @@
+:root {
+    --bg: #0b1020;
+    --text: #aab3cf;
+    --blue: #2d7bff;          /* the vibrant blue on hover: change it here */
+    --blue-glow: rgba(45, 123, 255, 0.55);
+    --line: #1c2646;
+}
+ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    background: var(--bg);
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+ 
+/* ===== THE STRIP ===== */
+.marquee {
+    overflow: hidden;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    cursor: default;
+ 
+    /* soft fade at the left and right edges */
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+ 
+.marquee-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+ 
+.marquee-group {
+    display: flex;
+    flex: none;
+    list-style: none;
+}
+ 
+/* ===== EACH WORD ===== */
+.marquee-group li {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    transition: color 0.6s ease, text-shadow 0.6s ease;   /* the "ease" part */
+}
+ 
+/* a little star between words */
+.marquee-group li::after {
+    content: "✦";
+    margin: 0 1.2rem;
+    font-size: 0.6em;
+    color: var(--blue);
+}
+ 
+/* ===== HOVER: words glow vibrant blue ===== */
+.marquee:hover .marquee-group li {
+    color: var(--blue);
+    text-shadow: 0 0 24px var(--blue-glow);
+}
